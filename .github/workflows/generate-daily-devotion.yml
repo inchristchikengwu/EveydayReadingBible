@@ -1,0 +1,36 @@
+name: Generate daily devotion
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Taiwan 05:55 = previous day 21:55 UTC. Avoid exact top-of-hour delays.
+    - cron: '55 21 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate devotion with OpenAI
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
+        run: python scripts/generate_devotion.py
+
+      - name: Commit generated devotion
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/today.json data/archive/*.json
+          git commit -m "Generate daily devotion" || echo "No changes to commit"
+          git push
