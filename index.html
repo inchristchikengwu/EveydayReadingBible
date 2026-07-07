@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#6b4f2a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="每日靈修" />
+  <title>每日基督教靈修</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Daily Christian Devotion</p>
+      <h1>每日基督教靈修</h1>
+    </div>
+    <button id="installBtn" class="ghost" hidden>安裝 App</button>
+  </header>
+
+  <main class="shell">
+    <section class="hero card">
+      <div>
+        <p id="dateLine" class="date-line">載入中…</p>
+        <h2 id="titleZh">今日靈修</h2>
+        <p id="titleEn" class="subtitle"></p>
+      </div>
+      <div class="controls" aria-label="閱讀設定">
+        <button id="fontMinus" class="round" aria-label="縮小字體">A−</button>
+        <span id="fontSizeLabel">100%</span>
+        <button id="fontPlus" class="round" aria-label="放大字體">A＋</button>
+      </div>
+    </section>
+
+    <nav class="tabs" aria-label="靈修單元分頁">
+      <button class="tab active" data-tab="scripture">今日經文</button>
+      <button class="tab" data-tab="meditation">今日默想</button>
+      <button class="tab" data-tab="practice">今日操練</button>
+      <button class="tab" data-tab="prayer">今日禱告</button>
+      <button class="tab" data-tab="hymn">今日詩歌</button>
+      <button class="tab" data-tab="sentence">今日一句話</button>
+    </nav>
+
+    <section id="content" class="content card" aria-live="polite"></section>
+
+    <section class="actions card slim">
+      <button id="refreshBtn">重新讀取今日內容</button>
+      <button id="showAllBtn" class="ghost">顯示全文</button>
+      <p id="status" class="status">若 GitHub Actions 已設定，內容每天早上會自動更新。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>經文引用請維持短節選。若需完整章節，請打開正式聖經版本閱讀。</p>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
