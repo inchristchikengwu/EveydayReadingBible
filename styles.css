@@ -42,6 +42,7 @@ body {
   color: var(--ink);
  /* font-family: "Microsoft JhengHei", "PingFang TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;  */
  /*  font-family: Calibri, "Microsoft JhengHei", "PingFang TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; */
+  font-family: Calibri, "Microsoft JhengHei", 
   .english {
   font-family: Calibri;
 }
