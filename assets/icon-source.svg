@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">每日基督教靈修</title>
+  <desc id="desc">深綠色底上的金色十字架與展開的聖經</desc>
+  <defs>
+    <linearGradient id="bg" x1="72" y1="54" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#397564"/>
+      <stop offset="0.55" stop-color="#245247"/>
+      <stop offset="1" stop-color="#153b33"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="214" y1="88" x2="300" y2="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe3a1"/>
+      <stop offset="0.48" stop-color="#e7b958"/>
+      <stop offset="1" stop-color="#b9822f"/>
+    </linearGradient>
+    <linearGradient id="paperLeft" x1="84" y1="258" x2="252" y2="409" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fffdf2"/>
+      <stop offset="1" stop-color="#e9dfc6"/>
+    </linearGradient>
+    <linearGradient id="paperRight" x1="428" y1="258" x2="260" y2="409" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fffdf2"/>
+      <stop offset="1" stop-color="#e9dfc6"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#071c17" flood-opacity="0.36"/>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="192" r="126" fill="#9ee7cc" opacity="0.08"/>
+  <circle cx="256" cy="192" r="82" fill="#f9cf76" opacity="0.12" filter="url(#softGlow)"/>
+
+  <g opacity="0.5" stroke="#bfe8d8" stroke-width="5" stroke-linecap="round">
+    <path d="M256 55v22"/>
+    <path d="M164 82l12 19"/>
+    <path d="M348 82l-12 19"/>
+    <path d="M107 151l22 8"/>
+    <path d="M405 151l-22 8"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M230 92c0-8 6-14 14-14h24c8 0 14 6 14 14v58h45c8 0 14 6 14 14v24c0 8-6 14-14 14h-45v91h-52v-91h-45c-8 0-14-6-14-14v-24c0-8 6-14 14-14h45V92z" fill="url(#gold)"/>
+    <path d="M244 90h24c2 0 4 2 4 4v66h53c2 0 4 2 4 4v22c0 2-2 4-4 4h-53v91h-32v-91h-53c-2 0-4-2-4-4v-22c0-2 2-4 4-4h53V94c0-2 2-4 4-4z" fill="none" stroke="#fff1c8" stroke-width="5" opacity="0.55"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M73 275c0-13 11-22 24-20 54 8 104 24 159 58v132c-56-35-109-51-170-59-8-1-13-8-13-16V275z" fill="#c89542"/>
+    <path d="M439 275c0-13-11-22-24-20-54 8-104 24-159 58v132c56-35 109-51 170-59 8-1 13-8 13-16V275z" fill="#b77e32"/>
+    <path d="M88 255c58 4 111 22 168 57v112c-52-29-104-44-168-50V255z" fill="url(#paperLeft)"/>
+    <path d="M424 255c-58 4-111 22-168 57v112c52-29 104-44 168-50V255z" fill="url(#paperRight)"/>
+    <path d="M256 311v113" stroke="#b68d49" stroke-width="8" stroke-linecap="round"/>
+    <path d="M256 311c-53-34-106-52-168-56" fill="none" stroke="#fffdf7" stroke-width="5" opacity="0.75"/>
+    <path d="M256 311c53-34 106-52 168-56" fill="none" stroke="#fffdf7" stroke-width="5" opacity="0.75"/>
+  </g>
+
+  <g fill="none" stroke="#927a50" stroke-width="5" stroke-linecap="round" opacity="0.55">
+    <path d="M116 304c40 6 76 18 108 35"/>
+    <path d="M116 329c39 6 75 17 108 34"/>
+    <path d="M116 354c37 6 72 16 104 31"/>
+    <path d="M396 304c-40 6-76 18-108 35"/>
+    <path d="M396 329c-39 6-75 17-108 34"/>
+    <path d="M396 354c-37 6-72 16-104 31"/>
+  </g>
+
+  <path d="M256 425c-49-31-100-46-163-52" fill="none" stroke="#fff7dc" stroke-width="4" opacity="0.6"/>
+  <path d="M256 425c49-31 100-46 163-52" fill="none" stroke="#fff7dc" stroke-width="4" opacity="0.6"/>
+</svg>

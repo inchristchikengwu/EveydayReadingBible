@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#2f5d50" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="每日靈修" />
+  <title>每日基督教靈修</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./assets/icon-192.png" />
+  <link rel="icon" href="./assets/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="brand-lockup">
+        <img class="app-mark" src="./assets/icon-192.png" alt="聖經與十字架圖示" width="64" height="64" />
+        <div>
+          <p class="eyebrow">Daily Christian Devotion</p>
+          <h1>每日基督教靈修</h1>
+        </div>
+      </div>
+
+      <div class="top-actions" aria-label="工具列">
+        <button id="settingsToggle" class="ghost-btn compact" type="button" aria-expanded="false">設定</button>
+        <button id="fontToggle" class="ghost-btn compact" type="button" aria-expanded="false">字型</button>
+        <button id="dateToggle" class="ghost-btn compact" type="button" aria-expanded="false">日期</button>
+        <button id="indexToggle" class="ghost-btn compact" type="button" aria-expanded="false">索引</button>
+      </div>
+    </header>
+
+    <section id="settingsPanel" class="panel settings hidden" aria-label="連線設定">
+      <h2>設定</h2>
+
+      <div class="theme-row" aria-label="主題顏色">
+        <span>主題</span>
+        <div class="segmented">
+          <button id="lightThemeBtn" type="button" data-theme-choice="light">淺色</button>
+          <button id="darkThemeBtn" type="button" data-theme-choice="dark">深色</button>
+        </div>
+      </div>
+
+      <p class="hint">
+        第一次使用請貼上 Google Apps Script Web App URL 與讀取 token。這些資料只存在這台手機/瀏覽器。
+      </p>
+
+      <label>
+        Google Apps Script Web App URL
+        <input id="endpointInput" type="url" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off" />
+      </label>
+      <label>
+        讀取 Token
+        <input id="tokenInput" type="password" placeholder="你在 Apps Script 設定的 APP_TOKEN" autocomplete="off" />
+      </label>
+      <div class="row">
+        <button id="saveSettingsBtn" class="primary-btn" type="button">儲存</button>
+        <button id="clearSettingsBtn" class="ghost-btn" type="button">清除</button>
+      </div>
+      <p id="settingsStatus" class="status" role="status"></p>
+    </section>
+
+    <section id="fontPanel" class="panel floating-panel hidden" aria-label="字型大小">
+      <h2>字型</h2>
+      <p class="hint">調整閱讀區文字大小。</p>
+      <div class="font-grid">
+        <button id="fontDownBtn" type="button" aria-label="縮小字型">A−</button>
+        <button id="fontUpBtn" type="button" aria-label="放大字型">A＋</button>
+        <button id="fontResetBtn" type="button">重設</button>
+      </div>
+    </section>
+
+    <section id="datePanel" class="panel floating-panel hidden" aria-label="日期讀取">
+      <div class="date-read-row">
+        <input id="dateInput" type="date" aria-label="選擇靈修日期" />
+        <button id="loadBtn" class="primary-btn load-btn" type="button">
+          <span>讀取</span>
+          <small id="inlineStatus">待讀取</small>
+        </button>
+      </div>
+    </section>
+
+    <section id="indexPanel" class="panel floating-panel index-panel hidden" aria-label="日期與靈修主題索引">
+      <div class="index-heading-row">
+        <div>
+          <p class="panel-kicker">Devotion Library</p>
+          <h2>日期／靈修主題索引</h2>
+        </div>
+        <button id="refreshIndexBtn" class="ghost-btn index-refresh" type="button">更新</button>
+      </div>
+      <label class="index-search-label">
+        <span class="sr-only">搜尋日期或主題</span>
+        <input id="indexSearchInput" type="search" placeholder="搜尋日期或靈修主題…" autocomplete="off" />
+      </label>
+      <p id="indexStatus" class="index-status" role="status">開啟索引後將讀取資料庫。</p>
+      <div id="indexList" class="index-list" aria-live="polite"></div>
+    </section>
+
+    <main>
+      <section id="metaPanel" class="meta-strip hidden" aria-label="靈修資訊">
+        <h2 id="devotionTitle"></h2>
+      </section>
+
+      <article id="reader" class="reader panel" aria-live="polite">
+        <div class="empty-state">
+          <div class="cross">✦</div>
+          <h2>尚未讀取今日靈修</h2>
+          <p>點上方「日期」，選日期後按「讀取」。</p>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <nav id="sectionNav" class="section-nav hidden" aria-label="靈修單元"></nav>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
